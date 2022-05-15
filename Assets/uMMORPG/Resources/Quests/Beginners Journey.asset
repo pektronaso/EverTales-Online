@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180d7443144664d7b81f52583a31b915, type: 3}
+  m_Name: Beginners Journey
+  m_EditorClassIdentifier: 
+  toolTip: '<b>{NAME}</b>
+
+    Kill some {KILLTARGET}s
+
+    to prove your strength!
+
+
+    Tasks:
+
+    * Kill {KILLTARGET}: {KILLED}/{KILLAMOUNT}
+
+
+    Rewards:
+
+    * {REWARDGOLD} Gold
+
+    * {REWARDEXPERIENCE} Experience
+
+    * {REWARDITEM}
+
+
+    {STATUS}'
+  requiredLevel: 0
+  predecessor: {fileID: 0}
+  rewardGold: 100
+  rewardExperience: 70
+  rewardItem: {fileID: 11400000, guid: 26b404de2c160499bab1fcda06a555f4, type: 2}
+  killTarget: {fileID: 114194098868247622, guid: e99e29064241846d297668f71b57c3f3,
+    type: 2}
+  killAmount: 2

@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b46cefdfa28d240db86676d9f6c569fc, type: 3}
+  m_Name: Baby Sapling
+  m_EditorClassIdentifier: 
+  maxStack: 1
+  buyPrice: 50
+  sellPrice: 25
+  itemMallPrice: 200
+  sellable: 1
+  tradable: 1
+  destroyable: 1
+  toolTip: '<b>{NAME} Level {SUMMONEDLEVEL}</b>
+
+    A Baby Sapling Pet.
+
+
+    Click Item to summon it.
+
+    Click again to unsummon it.
+
+    (requires owner level {SUMMONEDLEVEL}).
+
+
+    Health: {SUMMONEDHEALTH}
+
+    Level: {SUMMONEDLEVEL}
+
+    Experience: {SUMMONEDEXPERIENCE}
+
+
+    Destroyable: {DESTROYABLE}
+
+    Sellable: {SELLABLE}
+
+    Tradable: {TRADABLE}
+
+    Required Level: {MINLEVEL}
+
+
+    Amount: {AMOUNT}
+
+    Price: {BUYPRICE} Gold
+
+    <i>Sells for: {SELLPRICE} Gold</i>'
+  image: {fileID: 21300000, guid: 646d377ced3f14173ba7f3ca997f61dc, type: 3}
+  minLevel: 1
+  cooldownBuff: {fileID: 0}
+  summonPrefab: {fileID: 114369131274661838, guid: 6bb8edd32f5f94e2eaf5365d8e51d145,
+    type: 3}
+  revivePrice: 10
+  removeItemIfDied: 0

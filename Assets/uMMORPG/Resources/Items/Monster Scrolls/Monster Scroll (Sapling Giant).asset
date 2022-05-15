@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7acbfdc78e8874be2b3ba1d3b84d095d, type: 3}
+  m_Name: Monster Scroll (Sapling Giant)
+  m_EditorClassIdentifier: 
+  maxStack: 50
+  buyPrice: 100
+  sellPrice: 50
+  itemMallPrice: 1000
+  sellable: 1
+  tradable: 1
+  destroyable: 1
+  toolTip: Spawns a giant Sapling that will absolutely not kill you!
+  image: {fileID: 21300000, guid: d0199d8f11e8e4d9d9b638476269f75e, type: 3}
+  minLevel: 1
+  cooldownBuff: {fileID: 0}
+  spawns:
+  - monster: {fileID: 114194098868247622, guid: 477adec992c3c4377970ce3f90d06675,
+      type: 3}
+    amount: 1
+    distanceMultiplier: 3

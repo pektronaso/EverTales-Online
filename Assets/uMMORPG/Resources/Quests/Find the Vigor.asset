@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f16ec852cfc43438165ab2f523e128, type: 3}
+  m_Name: Find the Vigor
+  m_EditorClassIdentifier: 
+  toolTip: '<b>{NAME}</b>
+
+    Disarm the Saplings by gathering
+
+    their {GATHERITEM}s.
+
+
+    Tasks:
+
+    * Gather {GATHERITEM}: {GATHERED}/{GATHERAMOUNT}
+
+
+    Rewards:
+
+    * {REWARDGOLD} Gold
+
+    * {REWARDEXPERIENCE} Experience
+
+
+    {STATUS}'
+  requiredLevel: 2
+  predecessor: {fileID: 11400000, guid: 5f896a29d336f4f6e98c859de0fd1e89, type: 2}
+  rewardGold: 100
+  rewardExperience: 20
+  rewardItem: {fileID: 0}
+  gatherItem: {fileID: 11400000, guid: 26b404de2c160499bab1fcda06a555f4, type: 2}
+  gatherAmount: 3

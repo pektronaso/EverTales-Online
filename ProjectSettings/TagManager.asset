@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Monster
+  - MinimapCamera
+  - Fire
+  - InventorySlot
+  - EquipmentSlot
+  - TrashSlot
+  - SkillsSlot
+  - SkillbarSlot
+  - DragAndDropHandler
+  - LootSlot
+  - NpcSellSlot
+  - TradingSlot
+  - Npc
+  - CraftingIngredientSlot
+  - CraftingResultSlot
+  - ItemMallSlot
+  - Pet
+  - QuestLocation
+  - NpcReviveSlot
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Player
+  - Monster
+  - Npc
+  - Pet
+  - Indicator
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Terrain
+    uniqueID: 1088210625
+    locked: 0
+  - name: Obstacles
+    uniqueID: 2470428127
+    locked: 0
+  - name: Buildings
+    uniqueID: 3099144059
+    locked: 0
+  - name: BehindEntities
+    uniqueID: 3850324229
+    locked: 0
+  - name: Entities
+    uniqueID: 850132101
+    locked: 0
+  - name: Equipment
+    uniqueID: 2767956671
+    locked: 0
+  - name: Weapons
+    uniqueID: 723192925
+    locked: 0
+  - name: Buffs
+    uniqueID: 1136474945
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Foreground
+    uniqueID: 1591611385
+    locked: 0

@@ -1,0 +1,5 @@
+The Zelda-like Tilesets and Sprites were created by ArMM1998
+Source: https://opengameart.org/content/zelda-like-tilesets-and-sprites
+
+They are licensed as 'Public Domain':
+"You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission: http://creativecommons.org/publicdomain/zero/1.0/"
