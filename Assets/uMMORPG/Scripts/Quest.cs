@@ -27,6 +27,8 @@ public partial struct Quest
     // -> could use long for 64 bits if needed later, or even multiple fields
     public int progress;
 
+    public int field0;
+
     // a quest is complete after finishing it at the npc and getting rewards
     public bool completed;
 
@@ -34,6 +36,7 @@ public partial struct Quest
     public Quest(ScriptableQuest data)
     {
         hash = data.name.GetStableHashCode();
+        field0 = 0;
         progress = 0;
         completed = false;
     }

@@ -166,7 +166,7 @@ public partial class NetworkManagerMMO : NetworkManager
     public override void OnStartServer()
     {
         // connect to database
-        Database.singleton.Connect();
+        //Database.Database();
 
         // handshake packet handlers
         NetworkServer.RegisterHandler<CharacterCreateMsg>(OnServerCharacterCreate);
@@ -230,9 +230,9 @@ public partial class NetworkManagerMMO : NetworkManager
         // load from database
         // (avoid Linq for performance/gc. characters are loaded frequently!)
         List<Player> characters = new List<Player>();
-        foreach (string characterName in Database.singleton.CharactersForAccount(account))
+        foreach (string characterName in Database.CharactersForAccount(account))
         {
-            GameObject player = Database.singleton.CharacterLoad(characterName, playerClasses, true);
+            GameObject player = Database.CharacterLoad(characterName, playerClasses);
             characters.Add(player.GetComponent<Player>());
         }
 
@@ -326,7 +326,7 @@ public partial class NetworkManagerMMO : NetworkManager
             // (only if we know that he is not ingame, otherwise lobby has
             //  no netMsg.conn key)
             string account = lobby[conn];
-            List<string> characters = Database.singleton.CharactersForAccount(account);
+            List<string> characters = Database.CharactersForAccount(account);
 
             // validate index
             if (0 <= message.index && message.index < characters.Count)
@@ -334,7 +334,7 @@ public partial class NetworkManagerMMO : NetworkManager
                 //print(account + " selected player " + characters[index]);
 
                 // load character data
-                GameObject go = Database.singleton.CharacterLoad(characters[message.index], playerClasses, false);
+                GameObject go = Database.CharacterLoad(characters[message.index], playerClasses);
 
                 // add to client
                 NetworkServer.AddPlayerForConnection(conn, go);
@@ -420,10 +420,10 @@ public partial class NetworkManagerMMO : NetworkManager
             {
                 // not existant yet?
                 string account = lobby[conn];
-                if (!Database.singleton.CharacterExists(message.name))
+                if (!Database.CharacterExists(message.name))
                 {
                     // not too may characters created yet?
-                    if (Database.singleton.CharactersForAccount(account).Count < characterLimit)
+                    if (Database.CharactersForAccount(account).Count < characterLimit)
                     {
                         // valid class index?
                         if (0 <= message.classIndex && message.classIndex < playerClasses.Count)
@@ -435,7 +435,7 @@ public partial class NetworkManagerMMO : NetworkManager
                             Utils.InvokeMany(typeof(NetworkManagerMMO), this, "OnServerCharacterCreate_", message, player);
 
                             // save the player
-                            Database.singleton.CharacterSave(player, false);
+                            Database.CharacterSave(player, false);
                             Destroy(player.gameObject);
 
                             // send available characters list again, causing
@@ -482,14 +482,14 @@ public partial class NetworkManagerMMO : NetworkManager
         if (lobby.ContainsKey(conn))
         {
             string account = lobby[conn];
-            List<string> characters = Database.singleton.CharactersForAccount(account);
+            List<string> characters = Database.CharactersForAccount(account);
 
             // validate index
             if (0 <= message.index && message.index < characters.Count)
             {
                 // delete the character
                 print("delete character: " + characters[message.index]);
-                Database.singleton.CharacterDelete(characters[message.index]);
+                Database.CharacterDelete(characters[message.index]);
 
                 // addon system hooks
                 Utils.InvokeMany(typeof(NetworkManagerMMO), this, "OnServerCharacterDelete_", message);
@@ -518,7 +518,7 @@ public partial class NetworkManagerMMO : NetworkManager
     // duplicates.
     void SavePlayers()
     {
-        Database.singleton.CharacterSaveMany(Player.onlinePlayers.Values);
+        Database.CharacterSaveMany(Player.onlinePlayers.Values.ToList<Player>());
         if (Player.onlinePlayers.Count > 0) Debug.Log("saved " + Player.onlinePlayers.Count + " player(s)");
     }
 
@@ -549,7 +549,7 @@ public partial class NetworkManagerMMO : NetworkManager
         // save player (if any. nothing to save if disconnecting while in lobby.)
         if (conn.identity != null)
         {
-            Database.singleton.CharacterSave(conn.identity.GetComponent<Player>(), false);
+            Database.CharacterSave(conn.identity.GetComponent<Player>(), false);
             print("saved:" + conn.identity.name);
         }
 

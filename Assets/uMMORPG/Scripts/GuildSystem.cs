@@ -75,7 +75,7 @@ public static class GuildSystem
     {
         // doesn't exist yet?
         if (IsValidGuildName(guildName) &&
-            !Database.singleton.GuildExists(guildName)) // db check only on server, no Guild.CanCreate function because client has no DB.
+            !Database.GuildExists(guildName)) // db check only on server, no Guild.CanCreate function because client has no DB.
         {
             // create guild and add creator to members list as highest rank
             Guild guild = new Guild(guildName, creator, creatorLevel);
@@ -114,7 +114,7 @@ public static class GuildSystem
             guild.CanTerminate(requester))
         {
             // remove guild from database
-            Database.singleton.RemoveGuild(guildName);
+            Database.RemoveGuild(guildName);
 
             // clear for person that terminated
             BroadcastTo(requester, Guild.Empty);

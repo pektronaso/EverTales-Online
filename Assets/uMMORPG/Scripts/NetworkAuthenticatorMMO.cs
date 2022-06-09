@@ -88,7 +88,7 @@ public class NetworkAuthenticatorMMO : NetworkAuthenticator
             if (IsAllowedAccountName(message.account))
             {
                 // validate account info
-                if (Database.singleton.TryLogin(message.account, message.password))
+                if (Database.IsValidAccount(message.account, message.password))
                 {
                     // not in lobby and not in world yet?
                     if (!AccountLoggedIn(message.account))

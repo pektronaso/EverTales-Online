@@ -2775,7 +2775,7 @@ public partial class Player : Entity
     [Server]
     void ProcessCoinOrders()
     {
-        List<long> orders = Database.singleton.GrabCharacterOrders(name);
+        List<long> orders = Database.GrabCharacterOrders(name);
         foreach (long reward in orders)
         {
             coins += reward;
