@@ -88,7 +88,7 @@ public partial class Database : MonoBehaviour
                 var connectionStringBuilder = new MySqlConnectionStringBuilder
                 {
                     Server = "localhost",
-                    Database ="evertales",
+                    Database = "evertales",
                     UserID = "root",
                     Password = "",
                     Port = 3306,
@@ -176,7 +176,6 @@ public partial class Database : MonoBehaviour
         CREATE TABLE IF NOT EXISTS characters(
             name VARCHAR(16) NOT NULL,
             account VARCHAR(16) NOT NULL,
-
             class VARCHAR(16) NOT NULL,
             x FLOAT NOT NULL,
         	y FLOAT NOT NULL,
@@ -191,12 +190,9 @@ public partial class Database : MonoBehaviour
             gold BIGINT NOT NULL DEFAULT 0,
         	coins BIGINT NOT NULL DEFAULT 0,
             online TIMESTAMP,
-
             deleted BOOLEAN NOT NULL,
-
             guild VARCHAR(16),
             `rank` INT,
-
         	PRIMARY KEY (name),
             INDEX(account),
             INDEX(guild),
@@ -218,7 +214,6 @@ public partial class Database : MonoBehaviour
         	summonedHealth INT NOT NULL,
             summonedLevel INT NOT NULL,
             summonedExperience BIGINT NOT NULL,
-
             primary key(`character`, slot),
         	FOREIGN KEY(`character`)
                 REFERENCES characters(name)
@@ -231,7 +226,6 @@ public partial class Database : MonoBehaviour
             slot INT NOT NULL,
         	name VARCHAR(50) NOT NULL,
             amount INT NOT NULL,
-
             primary key(`character`, slot),
         	FOREIGN KEY(`character`)
                 REFERENCES characters(name)
@@ -245,7 +239,6 @@ public partial class Database : MonoBehaviour
             level INT NOT NULL,
         	castTimeEnd FLOAT NOT NULL,
             cooldownEnd FLOAT NOT NULL,
-
             PRIMARY KEY (`character`, name),
             FOREIGN KEY(`character`)
                 REFERENCES characters(name)
@@ -259,7 +252,6 @@ public partial class Database : MonoBehaviour
             name VARCHAR(50) NOT NULL,
             level INT NOT NULL,
             buffTimeEnd FLOAT NOT NULL,
-
             PRIMARY KEY (`character`, name),
             FOREIGN KEY(`character`)
                 REFERENCES characters(name)
@@ -273,7 +265,6 @@ public partial class Database : MonoBehaviour
             name VARCHAR(50) NOT NULL,
             field0 INT NOT NULL,
         	completed BOOLEAN NOT NULL,
-
             PRIMARY KEY(`character`, name),
         	FOREIGN KEY(`character`)
                 REFERENCES characters(name)
@@ -287,7 +278,6 @@ public partial class Database : MonoBehaviour
             `character` VARCHAR(16) NOT NULL,
             coins BIGINT NOT NULL,
             processed BIGINT NOT NULL,
-
             PRIMARY KEY(orderid),
             INDEX(`character`),
         	FOREIGN KEY(`character`)
@@ -747,7 +737,7 @@ public partial class Database : MonoBehaviour
                 player.agent.Warp(position);
                 if (!player.agent.isOnNavMesh)
                 {
-                    Transform start =  NetworkManagerMMO.GetNearestStartPosition(position);
+                    Transform start = NetworkManagerMMO.GetNearestStartPosition(position);
                     player.agent.Warp(start.position);
                     Debug.Log(player.name + " invalid position was reset");
                 }

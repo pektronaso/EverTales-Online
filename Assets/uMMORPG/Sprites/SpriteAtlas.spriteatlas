@@ -42,7 +42,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: ed49c72ded6b445fcb71e54c937972f3, type: 3}
-    totalSpriteSurfaceArea: 4931897
+    totalSpriteSurfaceArea: 5295037
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -1821,6 +1821,7 @@ SpriteAtlas:
   - {fileID: 21300346, guid: 9db101878ce88f246bbb144d664e56ec, type: 3}
   - {fileID: 21300344, guid: 9db101878ce88f246bbb144d664e56ec, type: 3}
   - {fileID: 21300000, guid: 4df3938760ce94d288ea3b6eb60ab785, type: 3}
+  - {fileID: 21300000, guid: c7c57587c68b8cc4ca62b74dce7cf4a2, type: 3}
   - {fileID: 21300000, guid: 59fb2987974e241e694eed75fac6074e, type: 3}
   - {fileID: 21300000, guid: bd8ecf87f82e341a1bef80b37fc2f83f, type: 3}
   - {fileID: 21300000, guid: f2d5b3979ce164c62ae954c837ceaf26, type: 3}
@@ -4359,6 +4360,7 @@ SpriteAtlas:
   - buildsObjects_173
   - buildsObjects_172
   - S_Bow04
+  - loginBackground
   - I_FrogLeg
   - S_Bow09
   - S_Sword19
